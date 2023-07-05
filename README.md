@@ -1,4 +1,4 @@
-# Unsupervised Learning for Molecular Systems -- Best Practices
+# Unsupervised Learning for Molecular Systems -- Introductory Tutorials
 CECAM Workshop, Vienna, 2023
 
 # Walk-through examples
