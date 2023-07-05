@@ -8,8 +8,8 @@ CECAM Workshop, Vienna, 2023
 QM9, MD22
 0. Start with downloading and pre-processing the data (it will be used in the following examples)
 ## Example 1: Feature selection
-1. Illustrate with 2D representation, 3D representation, and MD trajectories (3 examples of increasing complexity).
 [Walk-through](./walk-throughs/1-Feature-Selection.md)
+1. Illustrate with 2D representation, 3D representation, and MD trajectories (3 examples of increasing complexity).
 ## Example 2: Dimensionality reduction
 [Walk-through](./walk-throughs/2-Dimensionality-Reduction.md)
 1. Use same examples as above.
