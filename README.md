@@ -4,9 +4,15 @@ CECAM Workshop, Vienna, 2023
 # Walk-through examples (good and bad examples)
 
 ## Datasets
-[Walk-through](./walk-throughs/0-Acquire-Data.md)
-QM9, MD22
-0. Start with downloading and pre-processing the data (it will be used in the following examples)
+### QM7
+The QM7 dataset to be used in the examples below is available in [data/qm7.xyz](./data/qm7.xyz). Data was downloaded from blah blah blah and processed according to blah blah.
+
+It includes SMILES strings, 3D coordinates, and blah blah quantum properties.
+
+The original data is available on [this page](http://quantum-machine.org/datasets/).
+
+### Alanine dipeptide trajectory
+
 ## Example 1: Feature selection
 [Walk-through](./walk-throughs/1-Feature-Selection.md)
 1. Illustrate with 2D representation, 3D representation, and MD trajectories (3 examples of increasing complexity).
