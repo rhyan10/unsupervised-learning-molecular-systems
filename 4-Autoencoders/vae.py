@@ -54,6 +54,21 @@ class MolecularVAE(nn.Module):
         z = self.sampling(z_mean, z_logvar)
         return self.decode(z), z_mean, z_logvar
 
+def smiles_to_hot(smiles, max_len, padding, char_indices, nchars):
+    smiles = [pad_smile(i, max_len, padding)
+              for i in smiles if pad_smile(i, max_len, padding)]
+
+    X = np.zeros((len(smiles), max_len, nchars), dtype=np.float32)
+
+    for i, smile in enumerate(smiles):
+        for t, char in enumerate(smile):
+            try:
+                X[i, t, char_indices[char]] = 1
+            except KeyError as e:
+                print("ERROR: Check chars file. Bad SMILES:", smile)
+                raise e
+    return X
+
 #Load in XYZ geomtries with XYZ2MOL module in RDKit into RDKit mol object    
 
 db = ase.io.read('../data/qm7.xyz',':')
@@ -65,6 +80,7 @@ for i in range(len(db)):
     raw_mol = Chem.MolFromXYZFile('temp/mol'+str(i)+'.xyz')
     mol = Chem.Mol(raw_mol)
     smiles_strings = Chem.MolToSmiles(mol)
+    print(smiles_strings)
     all_smiles_strings.append(smiles_strings)
 
 
