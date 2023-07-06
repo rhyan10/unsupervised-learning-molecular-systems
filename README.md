@@ -14,17 +14,19 @@ The original data is available on [this page](http://quantum-machine.org/dataset
 ### Alanine dipeptide trajectory
 
 
-## Example 1: Feature selection
-[Walk-through](./walk-throughs/1-Feature-Selection.ipynb)
+## Example 1: Representations and Descriptors
+[Walk-through](./1-Representations-and-Descriptors/1-Tutorial.ipynb)
 1. Illustrate with 2D representation, 3D representation, and MD trajectories (3 examples of increasing complexity).
 
 ## Example 2: Dimensionality reduction
-[Walk-through](./walk-throughs/2-Dimensionality-Reduction.ipynb)
+[Walk-through](./2-Dimensionality-Reduction/2-Tutorial.ipynb)
 1. Use same examples as above.
 
-## Example 3: Generative modeling
-[Walk-through](./walk-throughs/3-Generative-Modeling.ipynb)
-1. Training an autoencoder on SMILES from QM9
-2. Searching latent space for molecules with high DRD2 activity
-3. Comparison to virtual screening/number of oracle calls
-4. Point to relevant works in the literature for 3D and perhaps MD applications of generative modeling (but this cannot be here as those tasks are too complex to run in a laptop)
+## Example 3: Clustering
+[Walk-through](./3-Clustering/3-Tutorial.ipynb)
+
+## Example 4: Autoencoder
+[Walk-through](./4-Autoencoders/4-Tutorial.ipynb)
+
+## Example 5: Contrastive Learning
+*If there is time.*
