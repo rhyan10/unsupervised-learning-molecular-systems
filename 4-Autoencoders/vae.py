@@ -1,20 +1,19 @@
-from rdkit import Chem
+import pybel
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.utils.data
-import gzip
-import pandas
-import h5py
 import numpy as np
-import rdkit
 import ase.io
+import torch.optim as optim
+import torch.utils.data
+from tqdm import tqdm
 
 class MolecularVAE(nn.Module):
     def __init__(self):
         super(MolecularVAE, self).__init__()
 
-        self.conv_1 = nn.Conv1d(120, 9, kernel_size=9)
+        self.conv_1 = nn.Conv1d(35, 9, kernel_size=9)
         self.conv_2 = nn.Conv1d(9, 9, kernel_size=9)
         self.conv_3 = nn.Conv1d(9, 10, kernel_size=11)
         self.linear_0 = nn.Linear(70, 435)
@@ -30,7 +29,9 @@ class MolecularVAE(nn.Module):
 
     def encode(self, x):
         x = self.relu(self.conv_1(x))
+        print(x.shape)
         x = self.relu(self.conv_2(x))
+        print(x.shape)
         x = self.relu(self.conv_3(x))
         x = x.view(x.size(0), -1)
         x = F.selu(self.linear_0(x))
@@ -54,37 +55,52 @@ class MolecularVAE(nn.Module):
         z = self.sampling(z_mean, z_logvar)
         return self.decode(z), z_mean, z_logvar
 
-def smiles_to_hot(smiles, max_len, padding, char_indices, nchars):
-    smiles = [pad_smile(i, max_len, padding)
-              for i in smiles if pad_smile(i, max_len, padding)]
-
+def smiles_to_hot(smiles, max_len, char_indices, nchars):
     X = np.zeros((len(smiles), max_len, nchars), dtype=np.float32)
-
-    for i, smile in enumerate(smiles):
+    for i, smile in tqdm(enumerate(smiles)):
         for t, char in enumerate(smile):
-            try:
                 X[i, t, char_indices[char]] = 1
-            except KeyError as e:
-                print("ERROR: Check chars file. Bad SMILES:", smile)
-                raise e
     return X
 
 #Load in XYZ geomtries with XYZ2MOL module in RDKit into RDKit mol object    
 
-db = ase.io.read('../data/qm7.xyz',':')
-for i, mol in enumerate(db):
-    ase.io.write('temp/mol'+str(i)+'.xyz', mol)
+db = ase.io.read('qm7_scaled.xyz',':')
+# for i, mol in enumerate(db):
+#     ase.io.write('temp/mol'+str(i)+'.xyz', mol)
+
+all_chars = []
+max_len = 35
 
 all_smiles_strings = []
-for i in range(len(db)):
-    raw_mol = Chem.MolFromXYZFile('temp/mol'+str(i)+'.xyz')
-    mol = Chem.Mol(raw_mol)
-    smiles_strings = Chem.MolToSmiles(mol)
-    print(smiles_strings)
-    all_smiles_strings.append(smiles_strings)
+for i in tqdm(range(len(db))):
+    mol = next(pybel.readfile("xyz", 'temp/mol'+str(i)+'.xyz'))
+    smi = mol.write(format="smi")
+    smi = smi.split()[0].strip()
+    #print(smi)
+    characters = [char for char in smi]
+    while len(characters) < max_len:
+        characters.append(" ")
+    all_chars.append(characters)
+    all_smiles_strings.append(smi)
+#unique_characters = set(all_chars)
+char_indices = {'S':0, '2':1, 'O':2, '[':3, 'o':4, '\\':5, 'c':6, '3':7, 'C':8, ')':9, 's':10, 'N':11, '(':12, 'H':13, ']':14, '#':15, 'n':16, '1':17, '@':18, '/':19, '=':20, ' ':21}
+one_hot_embeddings = smiles_to_hot(all_chars, max_len, char_indices, 22)
+data_train = one_hot_embeddings[:6000]
+data_test = one_hot_embeddings[6000:]
+data_train = torch.utils.data.TensorDataset(torch.from_numpy(data_train))
+data_test = torch.utils.data.TensorDataset(torch.from_numpy(data_test))
 
+train_loader = torch.utils.data.DataLoader(data_train, batch_size=50, shuffle=True)
 
+model = MolecularVAE()
+optimizer = optim.Adam(model.parameters())
 
+model.train()
+train_loss = 0
+for batch_idx, data in enumerate(train_loader):
+        data = data[0]
+        optimizer.zero_grad()
+        output, mean, logvar = model(data)
 
 
 
