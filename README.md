@@ -1,6 +1,4 @@
-# Unsupervised Learning for Molecular Systems -- Best Practices
-CECAM Workshop, Vienna, 2023
-
+# Best Practices in Unsupervised Learning for Molecular Systems
 In this repository, we have created various Python notebooks illustrating some of the concepts and best practices introduced in the article *Unsupervised Learning for Molecular Systems.*
 
 ## Contents
@@ -35,6 +33,10 @@ This directory contains one notebook illustrating the main idea behind [Clusteri
 Finally, this directory contains one notebook demonstrating how to construct a [Variational Autoencoder](4-Autoencoders/Variational-Autoencoder.ipynb).
 
 ## Contributors
+This work was initiated at the CECAM Workshop on *Machine-learned potentials in molecular simulation: best practices and tutorials* held in Vienna, July 2023.
+
+Since then, the following authors have contributed to this repo and the accompanying article:
+
 * [Rhyan Barrett](https://github.com/rhyan10)
 * Arnav Brahmasandra
 * [Bingqing Cheng](https://github.com/BingqingCheng)
