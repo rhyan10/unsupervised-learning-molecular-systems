@@ -1,0 +1,1 @@
+{"soap1": {"type": "SOAP", "species": [1, 6, 7, 8, 16], "cutoff": 2.5, "n": 4, "l": 3, "atom_gaussian_width": 0.32}}
