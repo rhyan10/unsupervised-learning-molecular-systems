@@ -1,6 +1,5 @@
 import py3Dmol
 import numpy as np
-
 def view_molecule(data, index, style):
 
     bohr2ang = 0.529177249
