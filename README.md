@@ -3,6 +3,21 @@ In this repository, we have created various Python notebooks illustrating some o
 
 ## Contents
 
+### Dependencies
+To run these notebooks, you will need to use a kernel with the following libraries installed:
+* RDKit
+* Pandas
+* ipykernel
+
+You can create a new environment in the terminal via the following sequence of commands:
+```
+conda create -n myenv python=3.9
+conda activate myenv
+pip install pandas ipykernel rdkit-pypi
+```
+
+Then, update the Python kernel you are using to run each notebook. Go to `Kernel` > `Change kernel` > `Python (myenv)`.
+
 ### Datasets
 #### ZINC-250k
 ZINC-250k is a subset of ZINC, a free database of commercially-available compounds for virtual screening. The ZINC-250k subset can be downloaded from [Kaggle](https://www.kaggle.com/datasets/basu369victor/zinc250k); each compound contains values for the partition coefficient (logP), quantitative estimate of drug-likeness (QED), and synthetic accessibility score (SAS). 1K compounds from ZINC-250k are provided in [data/](./data/).
