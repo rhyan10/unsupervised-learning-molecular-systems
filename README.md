@@ -39,10 +39,12 @@ This directory contains four notebooks touching on different aspects of molecula
 * [SOAP Descriptors](1-Representations-and-Descriptors/SOAP-Descriptors.ipynb)
 
 ### Example 2: Dimensionality Reduction
-This directory contains one notebook illustrating concepts and best practices for [Dimensionality Reduction](2-Dimensionality-Reduction/Dimensionality-Reduction.ipynb).
+This directory contains one notebook illustrating concepts and best practices for [Dimensionality Reduction](2-Dimensionality-Reduction/Dimensionality-Reduction.ipynb) with molecular data.
 
 ### Example 3: Clustering
-This directory contains one notebook illustrating the main idea behind [Clustering](3-Clustering/Clustering-Concepts.ipynb), including various walk-through examples.
+This directory contains two notebooks illustrating different ways to use clustering on molecular data:
+* [Clustering Trajectories](3-Clustering/Clustering-Trajectories.ipynb)
+* [Clustering Conformers](3-Clustering/Clustering-Conformers.ipynb)
 
 ### Example 4: Autoencoders
 Finally, this directory contains one notebook demonstrating how to construct a [Variational Autoencoder](4-Autoencoders/Variational-Autoencoder.ipynb).
