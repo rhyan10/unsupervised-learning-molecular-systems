@@ -1,5 +1,5 @@
-# Best Practices in Unsupervised Learning for Molecular Systems
-In this repository, we have created various Python notebooks illustrating some of the concepts and best practices introduced in the article *Unsupervised Learning for Molecular Systems.*
+# Unsupervised Learning for Molecular Systems
+In this repository, we have designed and collected various Python notebooks to illustrate some of the concepts and best practices for applying unsupervised learning methods to molecular data.
 
 ## Contents
 

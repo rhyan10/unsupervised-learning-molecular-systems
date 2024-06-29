@@ -1,2 +1,5 @@
 # Ignore the ASAP package (should be cloned by users)
 1-Representations-and-Descriptors/ASAP/
+
+# Ignore any saved model checkpoints for the VAE
+4-Autoencoders/VAEmodel.pth
