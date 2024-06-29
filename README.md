@@ -19,17 +19,22 @@ pip install pandas ipykernel rdkit-pypi
 Then, update the Python kernel you are using to run each notebook. Go to `Kernel` > `Change kernel` > `Python (myenv)`.
 
 ### Datasets
+There are three main datasets used in the Python notebooks presented here.
+
 #### ZINC-250k
-ZINC-250k is a subset of ZINC, a free database of commercially-available compounds for virtual screening. The ZINC-250k subset can be downloaded from [Kaggle](https://www.kaggle.com/datasets/basu369victor/zinc250k); each compound contains values for the partition coefficient (logP), quantitative estimate of drug-likeness (QED), and synthetic accessibility score (SAS). 1K compounds from ZINC-250k are provided in [data/](./data/).
+ZINC-250k is a subset of ZINC, a free database of commercially-available compounds for virtual screening. The ZINC-250k subset can be downloaded from [Kaggle](https://www.kaggle.com/datasets/basu369victor/zinc250k); each compound contains values for the partition coefficient (logP), quantitative estimate of drug-likeness (QED), and synthetic accessibility score (SAS). 1K compounds from ZINC-250k are provided in the [data](./data/) directory.
 
 [This subset](./data/zinc-250k-sample.csv) is used to explore the various ways we can represent molecules computationally.
 
 #### QM7
-The QM7 dataset to be used in the examples below is provided in [data/qm7.xyz](./data/qm7.xyz). It has already been preprocessed.
+The QM7 dataset is also used for some of the walk-through examples using molecular structural information. A copy of the dataset is provided in [data/qm7.xyz](./data/qm7.xyz), and has already been preprocessed.
 
 It includes SMILES strings, 3D coordinates, and various quantum properties.
 
 The original data is available on [this page](http://quantum-machine.org/datasets/).
+
+#### MD17
+One notebook applies clustering to molecular dynamics data and uses a 10k frame subset of the aspirin trajectory in MD17. The full trajectory for aspirin, as well as other MD17 trajectories, can be downloaded from [www.sgdml.org](http://www.sgdml.org/#datasets), although we provide a copy of the subset used herein in the [data](./data/) directory.
 
 ### Section 1: Representations and Descriptors
 This directory contains four notebooks touching on different aspects of molecular representations. These are:
