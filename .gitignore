@@ -2,4 +2,4 @@
 1-Representations-and-Descriptors/ASAP/
 
 # Ignore any saved model checkpoints for the VAE
-4-Autoencoders/VAEmodel.pth
+4-Generative-Modeling/VAEmodel.pth

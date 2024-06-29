@@ -52,7 +52,7 @@ This directory contains two notebooks illustrating different ways to use cluster
 * [Clustering Conformers](3-Clustering/Clustering-Conformers.ipynb)
 
 ### Example 4: Autoencoders
-Finally, this directory contains one notebook demonstrating how to construct a [Variational Autoencoder](4-Autoencoders/Variational-Autoencoder.ipynb).
+Finally, this directory contains one notebook demonstrating how to construct a [Variational Autoencoder](4-Generative-Modeling/Variational-Autoencoder.ipynb).
 
 ## Contributors
 This work was initiated at the CECAM Workshop on *Machine-learned potentials in molecular simulation: best practices and tutorials* held in Vienna, July 2023.
