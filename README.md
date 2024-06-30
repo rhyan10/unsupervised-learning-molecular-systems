@@ -20,8 +20,8 @@ Then, update the Python kernel you are using to run each notebook. Go to `Kernel
 
 Additional installation instructions for specific libraries are given within each notebook.
 
-### Datasets
-There are three main datasets used in the Python notebooks presented here.
+### Data sets
+There are three main data sets used in the Python notebooks presented here.
 
 #### ZINC-250k
 ZINC-250k is a subset of ZINC, a free database of commercially-available compounds for virtual screening. The ZINC-250k subset can be downloaded from [Kaggle](https://www.kaggle.com/datasets/basu369victor/zinc250k); each compound contains values for the partition coefficient (logP), quantitative estimate of drug-likeness (QED), and synthetic accessibility score (SAS). 1K compounds from ZINC-250k are provided in the [data](./data/) directory.
@@ -29,7 +29,7 @@ ZINC-250k is a subset of ZINC, a free database of commercially-available compoun
 [This subset](./data/zinc-250k-sample.csv) is used to explore the various ways we can represent molecules computationally.
 
 #### QM7
-The QM7 dataset is also used for some of the walk-through examples using molecular structural information. A copy of the dataset is provided in [data/qm7.xyz](./data/qm7.xyz), and has already been preprocessed.
+The QM7 data set is also used for some of the walk-through examples using molecular structural information. A copy of the data set is provided in [data/qm7.xyz](./data/qm7.xyz), and has already been preprocessed.
 
 It includes SMILES strings, 3D coordinates, and various quantum properties.
 
