@@ -1,5 +1,6 @@
-# Ignore the ASAP package (should be cloned by users)
+# Ignore the ASAP package (should be cloned by users) and any generated parameters
 1-Representations-and-Descriptors/ASAP/
+1-Representations-and-Descriptors/smart-soap-parameters
 
 # Ignore any saved model checkpoints for the VAE
 4-Generative-Modeling/VAEmodel.pth
