@@ -67,4 +67,4 @@ Since then, the following authors have contributed to this repo and the accompan
 * [Toni Oestereich](https://github.com/ToOest)
 * [Max Pinheiro Jr](https://github.com/maxjr82)
 * [Rocío Mercado](https://github.com/rociomer)
-* Hessam Yazdani
+* [Hessam Yazdani](https://github.com/YazdaniSIGMaLab)
