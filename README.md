@@ -18,6 +18,8 @@ pip install pandas ipykernel rdkit-pypi
 
 Then, update the Python kernel you are using to run each notebook. Go to `Kernel` > `Change kernel` > `Python (myenv)`.
 
+Additional installation instructions for specific libraries are given within each notebook.
+
 ### Datasets
 There are three main datasets used in the Python notebooks presented here.
 
